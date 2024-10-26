@@ -9,13 +9,12 @@ const pool2 = new Pool({
   port: 9876, // adjust to your actual PostgreSQL port
 });
 const pool = new Pool({
-  user: 'postgre_mousetruth', // your postgres user
-  host: 'r8qar.h.filess.io',
-  database: 'postgre_mousetruth',
-  password: 'b49ed6aa26dc9d38dbff9bd50a64ad1b1459696f', // your postgres password
-  port: 5433, // adjust to your actual PostgreSQL port
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
 });
-
 
 
 // Create table if it doesn't exist
@@ -27,7 +26,7 @@ const createProductsTable = async () => {
         name TEXT NOT NULL,
         description TEXT,
         price FLOAT NOT NULL,
-        quantity INTEGER NOT NULL
+        quantity INTEGER NOT NULL 
       );
     `);
     console.log("Table 'products' is ready.");
