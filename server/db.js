@@ -1,13 +1,6 @@
 // backend/db.js
 const { Pool } = require('pg');
 
-const pool2 = new Pool({
-  user: 'postgres', // your postgres user
-  host: 'localhost',
-  database: 'product_db',
-  password: 'Sunita@0201#', // your postgres password
-  port: 9876, // adjust to your actual PostgreSQL port
-});
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
