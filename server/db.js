@@ -1,6 +1,7 @@
 // backend/db.js
 const { Pool } = require('pg');
 
+// I have made the dataset using postgresql on https://dash.filess.io 
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
